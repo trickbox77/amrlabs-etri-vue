@@ -14,9 +14,15 @@ Vue.use(IconsPlugin);
 Vue.prototype.axios = axios;
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  vuetify,
-  render: (h) => h(App),
-}).$mount("#app");
+fetch(process.env.BASE_URL + "config.json")
+    .then((response) => response.json())
+    .then((config) => {
+      Vue.prototype.$config = config
+      store.commit('setConfig', config);
+      new Vue({
+        router,
+        store,
+        vuetify,
+        render: (h) => h(App),
+      }).$mount("#app");
+    })

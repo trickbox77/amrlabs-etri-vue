@@ -5,4 +5,7 @@ export default {
   mqttUrl: function (state, mqttUrl) {
     state.mqttUrl = mqttUrl;
   },
+  setConfig(state, config) {
+    state.mqttUrl = config.mqttUrl;
+  }
 };
