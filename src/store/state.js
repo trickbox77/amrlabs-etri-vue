@@ -9,5 +9,5 @@ export default {
     autoReloadHour: 0, // midnight
     autoReloadEvery: "1h30m",
   },
-  mqttUrl: '',
+  mqttUrl: 'ws://localhost:9001',
 };
